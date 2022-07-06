@@ -46,21 +46,17 @@ class FileOperations
 		}
 		return true;
 	}
-	public void ArrangeFiles()
+	public LinkedHashSet<String> ArrangeFiles()
 	{		
-		TreeSet<String> ts = new TreeSet<String>();//used to display the file names in ascending order
-
+		LinkedHashSet<String> lst = new LinkedHashSet<String>();//used to display the file names in ascending order
 
 		File[] files = new File(this.path).listFiles();
 		for (File file : files) {
 		    if (file.isFile()) {
-		    	ts.add(file.getName());
+		    	lst.add(file.getName());
 		    }
 		}
-		System.out.println("Displaying the files in ascending order");
-		System.out.println(files);
-		System.out.println(ts);
-		
+		return lst;
 	}
 }
 // this is the custom exception which handles file not found error
@@ -136,7 +132,7 @@ public class ApplicationMain {
 	}
 	public static void main(String[] args)
 	{
-		String path = "C:\\Users\\ritwi\\Documents";
+		String path = "C:\\Users\\ritwi\\Documents\\GitHub\\PGP-FSD\\Phase1 Project\\phaseOne\\TestFolder";
 		FileOperations fo = new FileOperations(path);
 		Scanner sc = new Scanner(System.in);
 		System.out.println("#######################################");
@@ -155,10 +151,17 @@ public class ApplicationMain {
 	        switch(choice)
 	        {
 	        case 1:
-	        	fo.ArrangeFiles();
+	        	LinkedHashSet<String> lst = fo.ArrangeFiles();
+	        	System.out.println("Displaying the files in ascending order");
+	    		System.out.println(lst);
 	        	break;
 	        case 2:
 	        	businessLevelOperations(sc,fo);
+	        	System.out.println("\nMAIN MENU --->");
+	        	System.out.println("\nPlease select any one of the options given below to continue :");
+	            System.out.println("1. To retrieve file names in ascending order");
+	            System.out.println("2. For business level operations");
+	            System.out.println("3. To close the application");
 	        	break;
 	        case 3:
 	        	System.out.println("Thankyou for using the Application");
