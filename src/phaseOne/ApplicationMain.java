@@ -136,7 +136,7 @@ public class ApplicationMain {
 		FileOperations fo = new FileOperations(path);
 		Scanner sc = new Scanner(System.in);
 		System.out.println("#######################################");
-		System.out.println("Welcome to Phase One Project");
+		System.out.println("Welcome to LockedMe.com");
         System.out.println("Developer Name: Ritwika Mukherjee ");
         System.out.println("#######################################");
         System.out.println("\nMAIN MENU --->");
