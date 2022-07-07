@@ -68,11 +68,19 @@ class FileNotFound extends Exception
 }
 
 public class ApplicationMain {
+	public static void MainMenu()
+	{
+		System.out.println("\n<---------MAIN MENU  --------->");
+    	System.out.println("\nPlease select any one of the options given below to continue :");
+        System.out.println("1. To retrieve file names in ascending order");
+        System.out.println("2. For business level operations");
+        System.out.println("3. To close the application");
+	}
 	//this method has all the business level operations
 	public static void businessLevelOperations(Scanner sc ,FileOperations fo)
 	{
 		boolean loop = true;
-		System.out.println("\nBUSINESS LEVEL MENU --->");
+		System.out.println("\n<---------BUSINESS LEVEL MENU --------->");
 		System.out.println("\nPlease select any one of the business level options to continue :");
         System.out.println("1. To add a new file");
         System.out.println("2. To delete an existing file");
@@ -139,11 +147,7 @@ public class ApplicationMain {
 		System.out.println("Welcome to LockedMe.com");
         System.out.println("Developer Name: Ritwika Mukherjee ");
         System.out.println("#######################################");
-        System.out.println("\nMAIN MENU --->");
-    	System.out.println("\nPlease select any one of the options given below to continue :");
-        System.out.println("1. To retrieve file names in ascending order");
-        System.out.println("2. For business level operations");
-        System.out.println("3. To close the application");
+        MainMenu();
         while(true)
         {
         	System.out.println("Please select any one of the MAIN MENU options to continue->");
@@ -157,11 +161,7 @@ public class ApplicationMain {
 	        	break;
 	        case 2:
 	        	businessLevelOperations(sc,fo);
-	        	System.out.println("\nMAIN MENU --->");
-	        	System.out.println("\nPlease select any one of the options given below to continue :");
-	            System.out.println("1. To retrieve file names in ascending order");
-	            System.out.println("2. For business level operations");
-	            System.out.println("3. To close the application");
+	        	MainMenu();
 	        	break;
 	        case 3:
 	        	System.out.println("Thankyou for using the Application");
